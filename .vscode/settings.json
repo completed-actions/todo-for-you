@@ -1,0 +1,5 @@
+{
+  "stylelint.configOverrides": {
+    "configBasedir": "./client"
+  }
+}
