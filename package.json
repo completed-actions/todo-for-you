@@ -1,0 +1,20 @@
+{
+  "name": "todo-for-you",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client:start": "cd client && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/completed-actions/todo-for-you.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/completed-actions/todo-for-you/issues"
+  },
+  "homepage": "https://github.com/completed-actions/todo-for-you#readme"
+}
