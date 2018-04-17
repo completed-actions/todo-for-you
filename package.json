@@ -10,7 +10,7 @@
     "client:start": "cd client && npm run start",
     "lint:client": "cd client && eslint .",
     "lint:server": "eslint .",
-    "stylelint": "cd client && stylelint ./**/*.css",
+    "stylelint": "cd client && npm run lint:css",
     "lint": "npm run stylelint && npm run lint:client && npm run lint:server"
   },
   "repository": {
@@ -26,8 +26,6 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
-    "eslint-plugin-react": "^7.7.0",
-    "stylelint": "^9.2.0",
-    "stylelint-config-standard": "^18.2.0"
+    "eslint-plugin-react": "^7.7.0"
   }
 }
