@@ -66,11 +66,11 @@ type Query {
 type Mutation {
   createUser(input: UserInput!): User
   removeUser(id: ID!): User
-  addFriendForUser(user: ID!, friend: ID!): User
-  createTodo(user: ID!, input: TodoInput!): Todo
+  addFriendForUser(userId: ID!, friendId: ID!): User
+  createTodo(userId: ID!, input: TodoInput!): Todo
   updateTodo(id: ID!, input: TodoInput!): Todo
   removeTodo(id: ID!): Todo
-  createTask(todo: ID!, input: TaskInput!): Task
+  createTask(todoId: ID!, input: TaskInput!): Task
   updateTask(id: ID!, input: TaskInput!): Task
   removeTask(id: ID!): Task
 }
