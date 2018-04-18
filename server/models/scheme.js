@@ -23,7 +23,7 @@ module.exports = (sequelize) => {
     isComplete: Sequelize.BOOLEAN
   });
 
-  User.belongsToMany(User, {as: 'Friend', through: 'User_Friends'});
+  User.belongsToMany(User, {as: 'Friends', through: 'User_Friends'});
   Todo.belongsTo(User);
   Task.belongsTo(Todo);
 
