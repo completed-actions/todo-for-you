@@ -16,4 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // eslint-disable-next-line no-console
-app.listen(app.get('port'), () => console.log(`Express app listening on localhost:${app.get('port')}`));
+app.listen(
+  app.get('port'),
+  () => console.log(`Express app listening on localhost:${app.get('port')}`)
+);
