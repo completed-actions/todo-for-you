@@ -1,18 +1,15 @@
 const Sequelize = require('sequelize');
 
 const scheme = require('./scheme');
-
-const {Op} = Sequelize;
+const db = require('../config').db;
 
 // добавил название базы данных
-const sequelize = new Sequelize('database', null, null, {
-  dialect: 'sqlite',
-  storage: 'db.sqlite3',
-
-  operatorsAliases: {$and: Op.and},
-
-  logging: false
-});
+const sequelize = new Sequelize(
+  db.database,
+  db.username,
+  db.password,
+  db.config
+);
 
 scheme(sequelize);
 sequelize.sync();
