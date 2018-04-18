@@ -43,6 +43,7 @@ input TodoInput {
 
 type Task {
     id: ID!
+    todo: [Todo]!
     title: String!
     isComplete: Boolean!
 }
@@ -65,9 +66,13 @@ type Query {
 type Mutation {
   createUser(input: UserInput!): User
   removeUser(id: ID!): User
-
-
-
+  addFriendForUser(user: ID!, friend: ID!): User
+  createTodo(user: ID!, input: TodoInput!): User
+  createTask(todo: ID!, input: TaskInput!): Todo
+  updateTodo(id: ID!, input: TodoInput!): Todo
+  updateTask(id: ID!, input: TaskInput!): Task
+  deleteTodo(id: ID!): Todo
+  deleteTask(id: ID!): Task
 }
 
 schema {
@@ -75,7 +80,3 @@ schema {
   mutation: Mutation
 }
 `;
-
-// addFriendForUser(user: ID!, friend: ID!)
-// createTodo(user: ID!, input: TodoInput!)
-// createTask(todo: ID!, input: TaskInput!)
