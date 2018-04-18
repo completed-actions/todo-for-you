@@ -67,12 +67,12 @@ type Mutation {
   createUser(input: UserInput!): User
   removeUser(id: ID!): User
   addFriendForUser(user: ID!, friend: ID!): User
-  createTodo(user: ID!, input: TodoInput!): User
-  createTask(todo: ID!, input: TaskInput!): Todo
+  createTodo(user: ID!, input: TodoInput!): Todo
   updateTodo(id: ID!, input: TodoInput!): Todo
+  removeTodo(id: ID!): Todo
+  createTask(todo: ID!, input: TaskInput!): Task
   updateTask(id: ID!, input: TaskInput!): Task
-  deleteTodo(id: ID!): Todo
-  deleteTask(id: ID!): Task
+  removeTask(id: ID!): Task
 }
 
 schema {
