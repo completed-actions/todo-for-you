@@ -30,7 +30,8 @@ module.exports = {
         models.Todo.create(input)
       ]);
     }).then(([user, todo]) => {
-      return user.addTodo(todo);
+      user.addTodo(todo);
+      return todo;
     });
   },
 
@@ -53,7 +54,8 @@ module.exports = {
         models.Task.create(input)
       ]);
     }).then(([todo, task]) => {
-      return todo.addTask(task);
+      todo.addTask(task);
+      return task;
     });
   },
 
