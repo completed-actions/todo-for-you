@@ -25,7 +25,9 @@ module.exports = (sequelize) => {
 
   User.belongsToMany(User, {as: 'Friends', through: 'User_Friends'});
   Todo.belongsTo(User);
+  User.hasMany(Todo);
   Task.belongsTo(Todo);
+  Todo.hasMany(Task);
 
   return {
     User, Todo, Task
