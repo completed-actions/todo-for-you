@@ -7,77 +7,64 @@ module.exports = {
     return models.User.create(input);
   },
 
-  // updateUser(root, { id, input }, context) {
-  //   return models.User.findById(id)
-  //     .then(user => user.update(input));
-  // },
-
   removeUser(root, {id}, context) {
     return models.User.findById(id)
       .then((user) => user.destroy());
   },
 
-  // // Room
-  // createRoom(root, { input }, context) {
-  //   return models.Room.create(input);
-  // },
+  addFriendForUser(root, {userId, friendId}, context) {
+    return Promise.all([
+      models.User.findById(userId),
+      models.User.findById(friendId)
+    ]).then(([user, friend]) => {
+      user.addFriend(friend.id);
+      return user;
+    });
+  },
 
-  // updateRoom(root, { id, input }, context) {
-  //   return models.Room.findById(id)
-  //     .then(room => room.update(input));
-  // },
+  // Todo
+  createTodo(root, {userId, input}, context) {
+    return models.User.findById(userId).then((user) => {
+      return Promise.all([
+        user,
+        models.Todo.create(input)
+      ]);
+    }).then(([user, todo]) => {
+      return user.addTodo(todo);
+    });
+  },
 
-  // removeRoom(root, { id }, context) {
-  //   return models.Room.findById(id)
-  //     .then(room => room.destroy());
-  // },
+  updateTodo(root, {id, input}, context) {
+    return models.Todo.findById(id).then((todo) => {
+      return todo.update(input);
+    });
+  },
 
-  // // Event
-  // createEvent(root, { input, usersIds, roomId }, context) {
-  //   return models.Event.create(input)
-  //     .then((event) => {
-  //       event.setRoom(roomId);
+  removeTodo(root, {id}, context) {
+    return models.Todo.findById(id)
+      .then((todo) => todo.destroy());
+  },
 
-  //       return event.setUsers(usersIds)
-  //         .then(() => event);
-  //     });
-  // },
+  // Task
+  createTask(root, {todoId, input}, context) {
+    return models.Todo.findById(todoId).then((todo) => {
+      return Promise.all([
+        todo,
+        models.Task.create(input)
+      ]);
+    }).then(([todo, task]) => {
+      return todo.addTask(task);
+    });
+  },
 
-  // updateEvent(root, {
-  //   id,
-  //   input,
-  //   usersIds,
-  //   roomId,
-  // }, context) {
-  //   return models.Event.findById(id)
-  //     .then(event => event.update(input))
-  //     .then((event) => {
-  //       event.setRoom(roomId);
-  //       return event.setUsers(usersIds)
-  //         .then(() => event);
-  //     });
-  // },
+  updateTask(root, {id, input}, context) {
+    return models.Task.findById(id).then((task) => {
+      return task.update(input);
+    });
+  },
 
-  // removeUserFromEvent(root, { id, userId }, context) {
-  //   return models.Event.findById(id)
-  //     .then(event => event.removeUser(userId)
-  //       .then(() => event));
-  // },
-
-  // // добавил отсутвовавший метод
-  // addUserToEvent(root, { id, userId }, context) {
-  //   return models.Event.findById(id)
-  //     .then(event => event.addUser(userId)
-  //       .then(() => event));
-  // },
-
-  // changeEventRoom(root, { id, roomId }, context) {
-  //   return models.Event.findById(id)
-  //     .then(event => event.setRoom(roomId));
-  // },
-
-  // removeEvent(root, { id }, context) {
-  //   return models.Event.findById(id)
-  //     .then(event => event.destroy());
-  // },
+  removeTask(root, {id}, context) {
+    return models.Task.findById(id)
+      .then((task) => task.destroy());
+  }
 };

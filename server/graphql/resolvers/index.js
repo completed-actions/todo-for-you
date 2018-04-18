@@ -2,21 +2,15 @@ const GraphQLDate = require('graphql-date');
 
 const query = require('./query');
 const mutation = require('./mutation');
+const user = require('./user');
+const todo = require('./todo');
+const task = require('./task');
 
 module.exports = {
   Query: query,
-
   Mutation: mutation,
-
-  // без return не выводит данные
-  // Event: {
-  //   users(event) {
-  //     return event.getUsers();
-  //   },
-  //   room(event) {
-  //     return event.getRoom();
-  //   },
-  // },
-
+  User: user,
+  Todo: todo,
+  Task: task,
   Date: GraphQLDate
 };

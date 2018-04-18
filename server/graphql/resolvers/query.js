@@ -17,8 +17,6 @@ module.exports = {
     return models.Todo.findById(id);
   },
   todos(root, args, context) {
-    // offset не давал выводить первую комнату =/
-    // добавил сортировку по убыванию
     return models.Todo.findAll({}, context);
   }
 };
