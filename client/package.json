@@ -12,10 +12,15 @@
     "build": "react-scripts build && mv build ../server/dist",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint:css": "stylelint ./**/*.css"
+    "lint:css": "stylelint ./**/*.css",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
     "stylelint": "^9.2.0",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^18.2.0",
+    "@storybook/react": "^3.4.2",
+    "@storybook/addon-actions": "^3.4.2",
+    "@storybook/addon-links": "^3.4.2"
   }
 }
