@@ -12,6 +12,8 @@
     "lint:server": "eslint .",
     "stylelint": "cd client && npm run lint:css",
     "lint": "npm run stylelint && npm run lint:client && npm run lint:server",
+    "dev": "nodemon server/app.js",
+    "reset-db": "rm -f ./db.sqlite3",
     "dev:components": "cd client && npm run storybook"
   },
   "repository": {
@@ -27,6 +29,19 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
-    "eslint-plugin-react": "^7.7.0"
+    "eslint-plugin-react": "^7.7.0",
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "graphql-date": "^1.0.3",
+    "graphql-tag": "^2.8.0",
+    "graphql-tools": "^2.24.0",
+    "sequelize": "^4.37.6",
+    "sqlite3": "^3.1.13"
   }
 }
