@@ -4,19 +4,19 @@ module.exports = {
   task(root, {id}) {
     return models.Task.findById(id);
   },
-  tasks(root, args, context) {
-    return models.Task.findAll(args, context);
+  tasks() {
+    return models.Task.all();
   },
   user(root, {id}) {
     return models.User.findById(id);
   },
-  users(root, args, context) {
-    return models.User.findAll({}, context);
+  users() {
+    return models.User.all();
   },
   todo(root, {id}) {
     return models.Todo.findById(id);
   },
-  todos(root, args, context) {
-    return models.Todo.findAll({}, context);
+  todos() {
+    return models.Todo.all();
   }
 };

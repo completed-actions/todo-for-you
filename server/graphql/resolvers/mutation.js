@@ -2,16 +2,16 @@ const {models} = require('../../models');
 
 module.exports = {
   // User
-  createUser(root, {input}, context) {
+  createUser(root, {input}) {
     return models.User.create(input);
   },
 
-  removeUser(root, {id}, context) {
+  removeUser(root, {id}) {
     return models.User.findById(id)
       .then((user) => user.destroy());
   },
 
-  addFriendForUser(root, {userId, friendId}, context) {
+  addFriendForUser(root, {userId, friendId}) {
     return Promise.all([
       models.User.findById(userId),
       models.User.findById(friendId)
@@ -22,7 +22,7 @@ module.exports = {
   },
 
   // Todo
-  createTodo(root, {userId, input}, context) {
+  createTodo(root, {userId, input}) {
     return models.User.findById(userId).then((user) => {
       return Promise.all([
         user,
@@ -34,19 +34,19 @@ module.exports = {
     });
   },
 
-  updateTodo(root, {id, input}, context) {
+  updateTodo(root, {id, input}) {
     return models.Todo.findById(id).then((todo) => {
       return todo.update(input);
     });
   },
 
-  removeTodo(root, {id}, context) {
+  removeTodo(root, {id}) {
     return models.Todo.findById(id)
       .then((todo) => todo.destroy());
   },
 
   // Task
-  createTask(root, {todoId, input}, context) {
+  createTask(root, {todoId, input}) {
     return models.Todo.findById(todoId).then((todo) => {
       return Promise.all([
         todo,
@@ -58,13 +58,13 @@ module.exports = {
     });
   },
 
-  updateTask(root, {id, input}, context) {
+  updateTask(root, {id, input}) {
     return models.Task.findById(id).then((task) => {
       return task.update(input);
     });
   },
 
-  removeTask(root, {id}, context) {
+  removeTask(root, {id}) {
     return models.Task.findById(id)
       .then((task) => task.destroy());
   }
