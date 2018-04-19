@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const {models} = require('../../models');
 
 module.exports = {
