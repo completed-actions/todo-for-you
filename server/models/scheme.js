@@ -24,9 +24,9 @@ module.exports = (sequelize) => {
   });
 
   User.belongsToMany(User, {as: 'Friends', through: 'User_Friends'});
-  Todo.belongsTo(User);
+  Todo.belongsTo(User, {onDelete: 'CASCADE'});
   User.hasMany(Todo);
-  Task.belongsTo(Todo);
+  Task.belongsTo(Todo, {onDelete: 'CASCADE'});
   Todo.hasMany(Task);
 
   return {
