@@ -14,5 +14,7 @@ app.use(express.static('dist'));
 
 app.listen(
   app.get('port'),
+  /* eslint-disable no-console */
   () => console.log(`Express app listening on localhost:${app.get('port')}`)
+  /* eslint-enable no-console */
 );
