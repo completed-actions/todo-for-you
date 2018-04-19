@@ -10,7 +10,7 @@ app.set('port', server.port);
 app.use(bodyParser.json());
 
 app.use('/graphql', graphqlRoutes);
-app.use(express.static('build'));
+app.use(express.static('dist'));
 
 app.listen(
   app.get('port'),
