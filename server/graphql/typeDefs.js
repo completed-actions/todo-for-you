@@ -51,7 +51,6 @@ type Task {
 input TaskInput {
     title: String!
     isComplete: Boolean!
-
 }
 
 type Query {
