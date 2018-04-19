@@ -1,17 +1,17 @@
 {
   "extends": ["eslint:recommended", "google"],
   "env": {
-      "node": true,
-      "mocha": true,
-      "es6": true
+    "node": true,
+    "mocha": true,
+    "es6": true
   },
   "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
   "rules": {
-      "comma-dangle": [2, "never"],
-      "new-cap": [2, { "capIsNew": false }],
-      "no-unused-vars": [2, { "vars": "all", "args": "after-used" }]
+    "comma-dangle": [2, "never"],
+    "new-cap": [2, { "capIsNew": false }],
+    "no-unused-vars": [2, { "vars": "all", "args": "after-used" }]
   }
 }
