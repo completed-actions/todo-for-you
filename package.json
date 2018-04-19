@@ -11,7 +11,8 @@
     "lint:client": "cd client && eslint .",
     "lint:server": "eslint .",
     "stylelint": "cd client && npm run lint:css",
-    "lint": "npm run stylelint && npm run lint:client && npm run lint:server"
+    "lint": "npm run stylelint && npm run lint:client && npm run lint:server",
+    "dev:components": "cd client && npm run storybook"
   },
   "repository": {
     "type": "git",
