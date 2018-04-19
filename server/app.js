@@ -10,9 +10,7 @@ app.set('port', server.port);
 app.use(bodyParser.json());
 
 app.use('/graphql', graphqlRoutes);
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('build'));
-}
+app.use(express.static('build'));
 
 app.listen(
   app.get('port'),
