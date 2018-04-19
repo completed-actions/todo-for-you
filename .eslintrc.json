@@ -9,6 +9,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "comma-dangle": [2, "never"]
+        "comma-dangle": [2, "never"],
+        "new-cap": [2, { "capIsNew": false }]
     }
 }
