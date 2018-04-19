@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const scheme = require('./scheme');
-const db = require('../config').db;
+const {db} = require('../config');
 
 // добавил название базы данных
 const sequelize = new Sequelize(

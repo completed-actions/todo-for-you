@@ -2,10 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const graphqlRoutes = require('./graphql/routes');
+const {server} = require('./config');
 
 const app = express();
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', server.port);
 app.use(bodyParser.json());
 
 app.use('/graphql', graphqlRoutes);
