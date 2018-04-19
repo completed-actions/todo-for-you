@@ -13,7 +13,7 @@
     "stylelint": "cd client && npm run lint:css",
     "lint": "npm run stylelint && npm run lint:client && npm run lint:server",
     "dev": "nodemon server/app.js",
-    "reset-db": "rm -f ./db.sqlite3"
+    "reset-db": "rm -f ./db.sqlite3",
     "dev:components": "cd client && npm run storybook"
   },
   "repository": {
