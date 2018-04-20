@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
   const Todo = sequelize.define('Todo', {
     title: Sequelize.STRING,
     priority: Sequelize.SMALLINT,
-    createAt: Sequelize.DATE
+    createAt: Sequelize.INTEGER
   });
 
   const Task = sequelize.define('Task', {
