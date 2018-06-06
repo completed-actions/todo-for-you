@@ -1,14 +1,23 @@
 Установка зависимостей клиент-серверного приложения:
 
-`npm install`
-
-Скрипты для бэкенда:
 ```
-npm run dev
-npm run reset-db
+npm i
 ```
-open localhost:3001/graphql
 
-Запуск dev разработки для клиента:
+Запуск dev разработки:
+```
+npm run start:dev # открываем на localhost:8080
+```
+если нужен graphql, то открываем на localhost:3001
 
-`npm run client:start`
+Запуск storybook
+```
+npm run storybook # открываем на localhost:9001
+```
+
+Запуск тестов:
+```
+npm run lint
+npm run lint:css
+npm run lint:js
+```

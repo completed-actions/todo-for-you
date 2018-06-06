@@ -1,4 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<h1>Init</h1>, document.getElementById('root'));
+import Button from './components/Button';
+
+ReactDOM.render(<div>
+  <Button theme='secondary' size='s'>3</Button>
+  </div>, document.getElementById('root'));
