@@ -37,10 +37,9 @@
     "eslint-plugin-react": "^7.7.0",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.17.3",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
+    "postcss-preset-env": "^5.1.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0",
     "url-loader": "^1.0.1",
@@ -51,8 +50,6 @@
   },
   "dependencies": {
     "bemponent": "^0.1.6",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
@@ -61,6 +58,8 @@
     "graphql-date": "^1.0.3",
     "graphql-tag": "^2.8.0",
     "graphql-tools": "^2.24.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "sequelize": "^4.37.6",
     "sqlite3": "^3.1.13"
   }
